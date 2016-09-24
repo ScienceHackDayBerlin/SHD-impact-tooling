@@ -1,10 +1,8 @@
-	* {
-		margin: 0;
-	}
 	body{
 		font-family:helvetica;
 		font-size: 14px;
 		text-transform: uppercase;
+		margin:0px;
 
 	}
 	button.accordion {
@@ -61,16 +59,12 @@
 	.co2{
 		width:100%;
 		padding: 18px;
+		box-sizing: border-box;
 		background-color: #CC3333;
 		font-size: 50px;
 		font-weight: bold;
 	}
 
-	.watts{
-		width:100%;
-		padding: 18px;
-		background-color: #CC3333;
-		font-size: 50px;
-		font-weight: bold;
+	li{
+		display: inline;
 	}
-
