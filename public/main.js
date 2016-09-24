@@ -1,10 +1,10 @@
-(function() {
+$(function() {
 	App = (function() {
    	function App() {
 			this.numberOfTeamMembers = 0;
       	this.listen('main');
 
-			// constants
+			// constants for calculate co2
 
 			this.CO2_ON_GERMANY_TODAY_PER_PERSON = 765.5170635;
 			this.COAL_FACTOR = 2.14;
@@ -13,38 +13,70 @@
     	}
 
 		App.prototype.listen = function(id) {
-			document.getElementById(id).addEventListener( 'click', this.process.bind(this) );
+			//document.getElementById(id).addEventListener( 'click', this.process.bind(this) );
+			$( '#'+id ).change( this.process.bind(this) );
 		};
 
+		// auto refresh
     	App.prototype.process = function() {
 			this.checkNumberOfTeamMembers();
 			this.calculate();
     	};
 
+		// display transport forms
 		App.prototype.checkNumberOfTeamMembers = function() {
-			var number = document.getElementById('number_of_team_members').value;
+			var number = $('#number_of_team_members').val();
 
 			if (number != this.numberOfTeamMembers) {
-				var template = document.getElementById('amount_of_km_template').innerHTML;
-				var row = document.getElementById('amount_of_km');
+				var template = $('#amount_of_km_template').html();
+				var row = $('#amount_of_km');
 				var html = '';
 				for (var i = 0; i < number; i++) {
 					html += '<br/>' + template;
 				} 
-				row.innerHTML = html;
+				row.html( html );
 			}
 	
 			this.numberOfTeamMembers = number;
 		};
 
 		App.prototype.calculate = function() {
-			var result_co2 = document.getElementById('co2_gr');
-			var number = document.getElementById('number_of_team_members').value;
+			var total = 0;
+
+			// calculate base co2 per person on team
+			var base = this.CO2_ON_GERMANY_TODAY_PER_PERSON * $('#number_of_team_members').val();
+		
+			// calculate transport co2 per person on team
+		
+			var transport = 0;
+			$('.transportation_form:visible').each( function() {
+				// get the km
+				var km = $(this).find('.number_km').val();
+				// get the method
+				var factor = $(this).find('input[name=transportation]:checked').attr('factor') || 0;
+				transport += (factor * km);
+			})
+			total = base + transport;
+
+			// calcculate hardware
+			var hardware = 0;
+			$('#hardware_form ul').each( function() {
+				if ( $(this).find(':checkbox:checked').length > 0 )
+					hardware += $(this).find(':input[type="number"]').attr('factor') * 
+						$(this).find(':input[type="number"]').val()
+			});
+			total += hardware;
+
+			// calculate reduction factor on energy source
+			total *= parseFloat( $('input[name=power_source]:checked').attr('factor') );
+
+			// display result
+			document.getElementById('co2_gr').innerHTML = total.toFixed(3);
 		};
        
     return App;
     
 	})();
 
-	new App();
-})()
+	new App().process();
+})
