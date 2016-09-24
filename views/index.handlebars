@@ -1,1 +1,96 @@
-<h1>{{text}}</h1>
+<button class="accordion">TEAM MEMBERS</button>
+	<div class="panel">
+	<br>
+
+	NUMBER OF TEAM MEMBERS &nbsp;<input class="number" type="number" min="0" max="50" value="0">
+	
+	<br>
+	<br>  
+	</div>
+	<button class="accordion">TRANSPORTATION</button>
+	<div class="panel">
+	<br>
+
+	<form action="">
+			AMOUNT OF KM <input class="number_km" type="number" min="0" max="10000" value="0"><br>
+			<input type="radio" name="transportation" value="metro">METRO<br>
+			<input type="radio" name="transportation" value="metro">BUS<br> 
+			<input type="radio" name="transportation" value="metro">TRAM<br> 
+			<input type="radio" name="transportation" value="metro">CAR<br>
+			<input type="radio" name="transportation" value="metro">BIKE<br>
+			<input type="radio" name="transportation" value="metro">PLANE<br>
+		</form>
+	
+	<br>
+	<br>  
+	</div>
+	<button class="accordion">HARDWARE</button>
+	<div class="panel">
+	<br>
+		<form action="">
+			<input type="checkbox" name="electronics" value="arduinoUNO">Arduino UNO 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+			<input type="checkbox" name="electronics" value="arduinoUNO">Arduino UNO 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+			<input type="checkbox" name="electronics" value="arduinoUNO">Arduino UNO 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+			<input type="checkbox" name="electronics" value="arduinoUNO">Arduino UNO 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+		</form>
+		<br>
+	</div>
+	<button class="accordion">MATERIALS</button>
+	<div id="foo" class="panel">
+	<br>
+	  <form action="">
+			<input type="checkbox" name="electronics" value="arduinoUNO"> WOOD 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+			<input type="checkbox" name="electronics" value="arduinoUNO"> PLASTIC 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+			<input type="checkbox" name="electronics" value="arduinoUNO"> GLASS 
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+			<input type="checkbox" name="electronics" value="arduinoUNO"> ETC...
+				&nbsp;<input class="number" type="number" min="0" max="50" value="0"><br>
+		</form>
+		<br>
+	</div>
+
+	<button class="accordion">TOOLS</button>
+	<div id="foo" class="panel">
+	  <br>
+	  <form action="">
+			<input type="checkbox" name="electronics" value="arduinoUNO"> DRILLER <br>
+			<input type="checkbox" name="electronics" value="arduinoUNO"> LASER CUTTER <br> 
+			<input type="checkbox" name="electronics" value="arduinoUNO"> 3D PRINTER <br>
+		</form>
+		<br>
+	</div>
+
+	<button class="accordion">ENERGY SOURCE</button>
+	<div id="foo" class="panel">
+	  <br>
+	  <form action="">
+			<input type="radio" name="electronics" value="arduinoUNO"> WIND POWER <br>
+			<input type="radio" name="electronics" value="arduinoUNO"> NUCLEAR POWER <br> 
+			<input type="radio" name="electronics" value="arduinoUNO"> SOLAR POWER <br>
+			<input type="radio" name="electronics" value="arduinoUNO"> BROWN COAL POWER <br>
+			<input type="radio" name="electronics" value="arduinoUNO"> GERMAN ENERGY MIX <br>
+		<br>
+	</div>
+
+
+	<div class="co2">0,35 GR OF CO2</div>
+	
+
+
+	<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	    acc[i].onclick = function(){
+	        this.classList.toggle("active");
+	        this.nextElementSibling.classList.toggle("show");
+	  }
+	}
+	</script>
