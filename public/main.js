@@ -71,7 +71,12 @@ $(function() {
 			total *= parseFloat( $('input[name=power_source]:checked').attr('factor') );
 
 			// display result
-			document.getElementById('co2_gr').innerHTML = total.toFixed(3);
+			var unity = 'GR';
+			if (total > 1000.0) {
+				total /= 1000.0;
+				unity = 'KG';
+			}
+			document.getElementById('co2_gr').innerHTML = total.toFixed(3) + '&nbsp;' + unity;
 		};
        
     return App;
