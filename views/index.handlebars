@@ -2,15 +2,12 @@
 	<div class="panel">
 	<br>
 
-	NUMBER OF TEAM MEMBERS &nbsp;<input class="number" type="number" min="0" max="50" value="0">
+	NUMBER OF TEAM MEMBERS &nbsp;<input id="number_of_team_members" class="number" type="number" min="0" max="50" value="0">
 	
 	<br>
 	<br>  
 	</div>
-	<button class="accordion">TRANSPORTATION</button>
-	<div class="panel">
-	<br>
-
+	<div style="display: none" id="amount_of_km_template">
 	<form action="">
 			AMOUNT OF KM <input class="number_km" type="number" min="0" max="10000" value="0"><br>
 			<input type="radio" name="transportation" value="metro">METRO<br>
@@ -19,10 +16,10 @@
 			<input type="radio" name="transportation" value="metro">CAR<br>
 			<input type="radio" name="transportation" value="metro">BIKE<br>
 			<input type="radio" name="transportation" value="metro">PLANE<br>
-		</form>
-	
-	<br>
-	<br>  
+	</form>
+	</div>
+	<button class="accordion">TRANSPORTATION</button>
+	<div class="panel" id="amount_of_km">
 	</div>
 	<button class="accordion">HARDWARE</button>
 	<div class="panel">
