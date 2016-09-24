@@ -62,14 +62,5 @@ api.post('/team/save', jsonBody, function *() {
    }
 })
 
-/*
-   var filePath = `${__base}/${this.params.id}.obj`
-   var stats = fs.statSync(filePath)
-   this.set('Content-Length', stats.size)
-   this.type = '.obj'
-   this.body = fs.createReadStream(filePath)
-*/
-//})
-
 module.exports = api
 
