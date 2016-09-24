@@ -1,0 +1,21 @@
+{
+"project": {
+   "name": "SHD tooling",
+   "authors": "we"
+},
+"server": {
+   "port": 3000,
+   "path": "/"
+},
+"template": {
+   "format": ".handlebars",
+   "viewPath": "/views",
+   "partialsPath": "/views/partials",
+   "layoutsPath": "/views/layout"
+},
+"page": {
+   "title": "tooling page",
+   "description": "tadaaa",
+   "author": "we"
+}      
+}      
