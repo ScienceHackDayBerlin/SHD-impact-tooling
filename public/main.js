@@ -3,6 +3,13 @@
    	function App() {
 			this.numberOfTeamMembers = 0;
       	this.listen('main');
+
+			// constants
+
+			this.CO2_ON_GERMANY_TODAY_PER_PERSON = 765.5170635;
+			this.COAL_FACTOR = 2.14;
+			this.WIND_FACTOR = 0.043;
+			this.SOLAR_FACTOR = 0.189;
     	}
 
 		App.prototype.listen = function(id) {
@@ -11,6 +18,7 @@
 
     	App.prototype.process = function() {
 			this.checkNumberOfTeamMembers();
+			this.calculate();
     	};
 
 		App.prototype.checkNumberOfTeamMembers = function() {
@@ -27,6 +35,11 @@
 			}
 	
 			this.numberOfTeamMembers = number;
+		};
+
+		App.prototype.calculate = function() {
+			var result_co2 = document.getElementById('co2_gr');
+			var number = document.getElementById('number_of_team_members').value;
 		};
        
     return App;
