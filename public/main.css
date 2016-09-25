@@ -80,3 +80,9 @@
    .ct-chart > svg {
       overflow: visible;
    }
+
+	ul{
+		list-style: none;
+		margin-left: 0px;
+	}
+
