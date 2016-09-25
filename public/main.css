@@ -65,9 +65,18 @@
 		background-color: #CC3333;
 		font-size: 50px;
 		font-weight: bold;
+      margin-bottom: 50px;
 	}
 
 	li{
 		display: inline;
 	}
 
+   .ct-chart {
+      max-width: 650px;
+      margin: 0 auto;
+   }
+
+   .ct-chart > svg {
+      overflow: visible;
+   }

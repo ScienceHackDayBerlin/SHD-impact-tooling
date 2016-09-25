@@ -77,6 +77,37 @@ $(function() {
 				unity = 'KG';
 			}
 			document.getElementById('co2_gr').innerHTML = total.toFixed(2) + '&nbsp;' + unity;
+
+			this.displayChart(base, transport, hardware);
+		};
+
+		App.prototype.displayChart = function(over, transport, tools) {
+			var data = {
+				labels: ['OVERHEAD', 'TRANSPORTATION', 'HARDWARE AND TOOLS'],
+			  	series: [ over, transport, tools ]
+			};
+
+			var chart = new Chartist.Pie('.ct-chart', data, {
+				chartPadding: 40,
+				labelOffset: 80,
+				labelDirection: 'explode',
+				donut: true,
+				donutWidth: 90,
+		//  		startAngle: 90,
+				//total: 180
+				labelInterpolationFnc: function(value, index) {
+					if (data.series[index] > 0.0)
+						return value + ' ' + data.series[index];
+					else
+						return '';
+  				}
+			});
+		/*	
+			chart.on('draw', function(data) {
+				data.group.append('txt');
+			});
+*/
+
 		};
        
     return App;
@@ -84,4 +115,7 @@ $(function() {
 	})();
 
 	new App().process();
+
+
+
 })
