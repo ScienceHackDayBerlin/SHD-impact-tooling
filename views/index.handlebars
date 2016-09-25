@@ -1,132 +1,126 @@
 <button class="accordion">TEAM MEMBERS</button>
-	<div class="panel">
-	<br>
-
+<div class="panel">
 	NUMBER OF TEAM MEMBERS &nbsp;<input id="number_of_team_members" class="number" type="number" min="0" max="50" value="1">
-	
-	<br>
-	<br>  
-	</div>
-	<div style="display: none" id="amount_of_km_template">
-	<br>
-	<form class="transportation_form">
+</div>
+
+<div style="display: none" id="amount_of_km_template">
+	<div class="transportation_form">
 			AMOUNT OF KM <input class="number_km" type="number" min="0" max="10000" value="0"><br>
 			<input type="radio" name="transportation" value="train" factor="60">TRAIN<br>
 			<input type="radio" name="transportation" value="bus" factor="50">BUS<br> 
 			<input type="radio" name="transportation" value="car" factor="130">CAR<br>
 			<input type="radio" name="transportation" value="plane" factor="175">PLANE<br>
-	</form>
-	<br>
 	</div>
-	<button class="accordion">TRANSPORTATION</button>
-	<div class="panel" id="amount_of_km">
+</div>
+
+<button class="accordion">TRANSPORTATION</button>
+<div class="panel" id="amount_of_km">
+</div>
+
+<button class="accordion">HARDWARE & TOOLS</button>
+<div class="panel">
+	<div id="hardware_form">
+		<ul>
+			<li>
+				LAPTOP <input type="checkbox" value="laptop">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="749">
+			</li>
+			<br>
+		</ul>
+		<ul>
+			<li>
+				PHONE <input type="checkbox" name="electronics" value="phone">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="0" factor="32.1">
+			</li>
+		</ul>
+		<ul>
+			<li>
+				TABLET <input type="checkbox" name="electronics" value="tablet">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="38.52">
+			</li>
+		</ul> 
+		<ul> 
+			<li>
+				CABLES <input type="checkbox" name="electronics" value="cables">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="0">
+			</li>
+		</ul> 
+		<ul> 
+			<li>
+				3D PRINTER <input type="checkbox" name="electronics" value="3Dprinter">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="321">
+			</li>
+		</ul> 
+		<ul> 
+			<li>
+				LASER CUTTER <input type="checkbox" name="electronics" value="laser">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="417.3">
+			</li>
+		</ul> 
+		<ul> 
+			<li>
+				HOT PLATE <input type="checkbox" name="electronics" value="hot-plate">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="6420">
+			</li>
+		</ul> 
+		<ul> 
+			<li>
+				KITCHEN AID <input type="checkbox" name="electronics" value="kitchen_aid">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="160.5">
+			</li>
+		</ul> 
+		<ul> 
+			<li>
+				LIGHT BULB <input type="checkbox" name="electronics" value="light">
+			</li>
+			<li>
+				<input class="number" type="number" min="0" max="50" value="1" factor="642">
+			</li>
+		</ul> 
 	</div>
-	<button class="accordion">HARDWARE & TOOLS</button>
-	<div class="panel">
-	<br>
-		<form id="hardware_form">
-			<ul>
-				<li>
-					LAPTOP <input type="checkbox" value="laptop">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="749">
-				</li>
-			</ul>
-			<ul>
-				<li>
-					PHONE <input type="checkbox" name="electronics" value="phone">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="0" factor="32.1">
-				</li>
-			</ul>
-			<ul>
-				<li>
-					TABLET <input type="checkbox" name="electronics" value="tablet">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="38.52">
-				</li>
-			</ul> 
-			<ul> 
-				<li>
-					CABLES <input type="checkbox" name="electronics" value="cables">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="0">
-				</li>
-			</ul> 
-			<ul> 
-				<li>
-					3D PRINTER <input type="checkbox" name="electronics" value="3Dprinter">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="321">
-				</li>
-			</ul> 
-			<ul> 
-				<li>
-					LASER CUTTER <input type="checkbox" name="electronics" value="laser">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="417.3">
-				</li>
-			</ul> 
-			<ul> 
-				<li>
-					HOT PLATE <input type="checkbox" name="electronics" value="hot-plate">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="6420">
-				</li>
-			</ul> 
-			<ul> 
-				<li>
-					KITCHEN AID <input type="checkbox" name="electronics" value="kitchen_aid">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="160.5">
-				</li>
-			</ul> 
-			<ul> 
-				<li>
-					LIGHT BULB <input type="checkbox" name="electronics" value="light">
-				</li>
-				<li>
-					<input class="number" type="number" min="0" max="50" value="1" factor="642">
-				</li>
-			</ul> 
-		</form>
-		<br>
-	</div>
-	<button class="accordion">ENERGY SOURCE</button>
-	<div id="foo" class="panel">
-	  <br>
-	  <form action="">
-			<input type="radio" name="power_source" factor="0.043"> WIND POWER <br>
+</div>
+
+<button class="accordion">ENERGY SOURCE</button>
+<div class="panel">
+  <div>
+		<input type="radio" name="power_source" factor="0.043"> WIND POWER <br>
 <!--			<input type="radio" name="power_source" factor=""> NUCLEAR POWER <br> -->
-			<input type="radio" name="power_source" factor="0.189"> SOLAR POWER <br>
-			<input type="radio" name="power_source" factor="2.14"> BROWN COAL POWER <br>
-			<input type="radio" name="power_source" factor="1" checked> GERMAN ENERGY MIX <br>
-		<br>
-	</div>
+		<input type="radio" name="power_source" factor="0.189"> SOLAR POWER <br>
+		<input type="radio" name="power_source" factor="2.14"> BROWN COAL POWER <br>
+		<input type="radio" name="power_source" factor="1" checked> GERMAN ENERGY MIX <br>
+  </div>
+</div>
+
+<div class="co2">
+	<span id="co2_gr">0 GR</span> OF CO2
+</div>
 
 
-	<div class="co2">
-		<span id="co2_gr">0</span> GR OF CO2
-	</div>
-	
 
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-	<script>
-	var acc = document.getElementsByClassName("accordion");
-	var i;
-
-	for (i = 0; i < acc.length; i++) {
-	    acc[i].onclick = function(){
-	        this.classList.toggle("active");
-	        this.nextElementSibling.classList.toggle("show");
-	  }
-	}
-	</script>
+for (i = 0; i < acc.length; i++) {
+	 acc[i].onclick = function(){
+		  this.classList.toggle("active");
+		  this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>

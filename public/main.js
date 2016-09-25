@@ -76,7 +76,7 @@ $(function() {
 				total /= 1000.0;
 				unity = 'KG';
 			}
-			document.getElementById('co2_gr').innerHTML = total.toFixed(3) + '&nbsp;' + unity;
+			document.getElementById('co2_gr').innerHTML = total.toFixed(2) + '&nbsp;' + unity;
 		};
        
     return App;
