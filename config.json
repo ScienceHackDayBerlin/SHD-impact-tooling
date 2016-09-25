@@ -1,7 +1,7 @@
 {
 "project": {
-   "name": "SHD tooling",
-   "authors": "we"
+   "name": "SHD emission tracker",
+   "authors": "Joana Moll, Julia Schoelermann, Nuño de la Serna"
 },
 "server": {
    "port": 3000,
@@ -14,8 +14,8 @@
    "layoutsPath": "/views/layout"
 },
 "page": {
-   "title": "tooling page",
-   "description": "tadaaa",
-   "author": "we"
+   "title": "SHD emission tracker",
+   "description": "CO2 emission tracker toolkit",
+   "author": "Joana Moll, Julia Schoelermann, Nuño de la Serna"
 }      
 }      

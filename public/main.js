@@ -68,7 +68,8 @@ $(function() {
 			total += hardware;
 
 			// calculate reduction factor on energy source
-			total *= parseFloat( $('input[name=power_source]:checked').attr('factor') );
+			var reduction_factor = parseFloat( $('input[name=power_source]:checked').attr('factor') );
+			total *= reduction_factor;
 
 			// display result
 			var unity = 'GR';
@@ -78,7 +79,7 @@ $(function() {
 			}
 			document.getElementById('co2_gr').innerHTML = total.toFixed(2) + '&nbsp;' + unity;
 
-			this.displayChart(base, transport, hardware);
+			this.displayChart(base * reduction_factor, transport * reduction_factor, hardware * reduction_factor);
 		};
 
 		App.prototype.displayChart = function(over, transport, tools) {
