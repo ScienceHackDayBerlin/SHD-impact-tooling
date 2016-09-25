@@ -69,36 +69,42 @@ $(function() {
 
 			// calculate reduction factor on energy source
 			var reduction_factor = parseFloat( $('input[name=power_source]:checked').attr('factor') );
-			total *= reduction_factor;
+			var reduced = total * reduction_factor;
 
 			// display result
 			var unity = 'GR';
-			if (total > 1000.0) {
-				total /= 1000.0;
+			if (reduced > 1000.0) {
+				reduced /= 1000.0;
 				unity = 'KG';
 			}
-			document.getElementById('co2_gr').innerHTML = total.toFixed(2) + '&nbsp;' + unity;
+			document.getElementById('co2_gr').innerHTML = reduced.toFixed(2) + '&nbsp;' + unity;
 
-			this.displayChart(base * reduction_factor, transport * reduction_factor, hardware * reduction_factor);
+			this.displayChart(total, base * reduction_factor, transport * reduction_factor, hardware * reduction_factor);
 		};
 
-		App.prototype.displayChart = function(over, transport, tools) {
+		App.prototype.displayChart = function(total, over, transport, tools) {
 			var data = {
 				labels: ['OVERHEAD', 'TRANSPORTATION', 'HARDWARE AND TOOLS'],
 			  	series: [ over, transport, tools ]
 			};
+
+			var in_min = 9 * 1000.0;
+			var out_min = 25;
+			var in_max = 80 * 1000.0;
+			var out_max = 200;
+			var hole = (total - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 
 			var chart = new Chartist.Pie('.ct-chart', data, {
 				chartPadding: 40,
 				labelOffset: 80,
 				labelDirection: 'explode',
 				donut: true,
-				donutWidth: 90,
+				donutWidth: Math.max( Math.min(hole, out_max), out_min),
 		//  		startAngle: 90,
 				//total: 180
 				labelInterpolationFnc: function(value, index) {
 					if (data.series[index] > 0.0)
-						return value + ' ' + data.series[index];
+						return value + ' ' + data.series[index].toFixed(2);
 					else
 						return '';
   				}
